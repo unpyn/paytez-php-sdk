@@ -75,5 +75,3 @@ try {
 
 The PAYTez PHP SDK is open-source software licensed under the [MIT License](LICENSE).
 ```
-
-Feel free to copy the above Markdown content as a single block and use it as your README.md file for your PAYTez PHP SDK package. It provides a complete guide with examples for using the SDK.
