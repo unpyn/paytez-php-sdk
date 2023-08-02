@@ -46,6 +46,8 @@ try {
     $redirectLink = $paytezClient->createWebPayment($invoiceAmount, $currencySymbol, $successUrl, $failureUrl);
     // Redirect the user to the payment page
     header("Location: " . $redirectLink);
+    //FOR LARAVEL INTEGRATION USE THIS REDIRECT
+    // return redirect()->away($redirectLink);
     exit();
 } catch (\Exception $e) {
     // Handle any exceptions that may occur during the API call
