@@ -1,6 +1,6 @@
 <?php
 
-namespace YourNamespace\YourPackageName\PaytezApi;
+namespace  Paytez\PaytezApi;
 
 class PaytezApiClient
 {
