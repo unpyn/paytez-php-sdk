@@ -1,0 +1,24 @@
+{
+    "name": "paytez/paytez-php-sdk",
+    "description": "PAYTez PHP SDK for interacting with the PAYTez API",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "PayTez",
+            "email": "hello@paytez.io"
+        }
+    ],
+    "version": "1.0.0",
+    "autoload": {
+        "psr-4": {
+            "Paytez\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^7.0",
+        "ext-curl": "*"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
