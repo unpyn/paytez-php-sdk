@@ -1,6 +1,6 @@
-Of course! Here's the content for your README.md file written in Markdown language as a single block:
+Apologies for the confusion. Here's the complete README.md content with both Composer and normal PHP code integration examples:
 
-```
+```markdown
 # PAYTez PHP SDK
 
 The PAYTez PHP SDK provides a convenient way to interact with the PAYTez API for handling web payments. This SDK allows you to create and verify web payments using PHP and cURL.
@@ -15,7 +15,9 @@ composer require paytez/paytez-php-sdk
 
 ## Usage
 
-To use the PAYTez PHP SDK, follow the steps below:
+### Using Composer:
+
+To use the PAYTez PHP SDK with Composer, follow the steps below:
 
 1. Include the Composer autoloader in your PHP script:
 
@@ -65,6 +67,66 @@ try {
     echo "Error: " . $e->getMessage();
 }
 ```
+
+### Without Using Composer:
+
+To use the PAYTez PHP SDK without Composer, follow these steps:
+
+1. Download the SDK Files:
+   Download the PAYTez PHP SDK files, including all the PHP files and the `src` folder containing the classes.
+   https://github.com/unpyn/paytez-php-sdk
+
+2. Include the SDK Files:
+   Include the necessary SDK files in your PHP script using the `require_once` or `include_once` statements. Make sure to adjust the paths according to your project's file structure.
+
+   For example:
+   ```php
+   // Replace 'path/to/paytez-php-sdk/src/' with the actual path to the SDK files
+   require_once 'path/to/paytez-php-sdk/src/PaytezApi/PaytezApiClient.php';
+   ```
+
+3. Create an Instance of PaytezApiClient:
+   Create an instance of the `PaytezApiClient` class with your PAYTez API key. Also, specify whether you want to use the sandbox or live environment.
+
+   For example:
+   ```php
+   $apiKey = 'your-api-key';
+   $paytezClient = new Paytez\PaytezApi\PaytezApiClient($apiKey, true); // Set to true for sandbox, false for live environment
+   ```
+
+4. Use the Package's Methods:
+   Now, you can use the methods provided by the PAYTez PHP SDK, such as `createWebPayment` and `verifyWebPayment`, in your PHP code.
+
+   For example:
+   ```php
+   // Create a Web Payment
+   $invoiceAmount = "10";
+   $currencySymbol = "USD";
+   $successUrl = "http://example.com/success";
+   $failureUrl = "http://example.com/failure";
+
+   try {
+       $redirectLink = $paytezClient->createWebPayment($invoiceAmount, $currencySymbol, $successUrl, $failureUrl);
+       // Redirect the user to the payment page
+       header("Location: " . $redirectLink);
+       exit();
+   } catch (\Exception $e) {
+       // Handle any exceptions that may occur during the API call
+       echo "Error: " . $e->getMessage();
+   }
+
+   // Verify a Web Payment
+   $invoiceNo = "123456";
+
+   try {
+       $verificationResult = $paytezClient->verifyWebPayment($invoiceNo);
+       // Process the verification result as needed
+       var_dump($verificationResult);
+   } catch (\Exception $e) {
+       // Handle any exceptions that may occur during the API call
+       echo "Error: " . $e->getMessage();
+   }
+   ```
 
 ## Requirements
 
