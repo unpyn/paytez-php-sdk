@@ -74,4 +74,3 @@ try {
 ## License
 
 The PAYTez PHP SDK is open-source software licensed under the [MIT License](LICENSE).
-```
