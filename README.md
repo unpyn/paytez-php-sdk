@@ -1,5 +1,3 @@
-Apologies for the confusion. Here's the complete README.md content with both Composer and normal PHP code integration examples:
-
 ```markdown
 # PAYTez PHP SDK
 
